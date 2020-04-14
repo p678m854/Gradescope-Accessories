@@ -26,6 +26,8 @@ To Do:
 1) Get rid of the error being thown by mv
 
 Edits:
+April 11 2020
+-- Added pdf suffix on mv in the renaming of a converted word document
 """
 
 import os
@@ -104,7 +106,7 @@ with cd("~/Downloads"):
                     subprocess.run(['soffice', '--convert-to', 'pdf', '.'.join(subs[0])])
                     subprocess.run(['mv',
                                     subs[0][0]+'.pdf',
-                                    '-'.join([assignment_name, ku_id, name])])
+                                    '-'.join([assignment_name, ku_id, name]) + '.pdf'])
                     subprocess.run(['rm', '.'.join(subs[0])])
                 else:
                     pass
